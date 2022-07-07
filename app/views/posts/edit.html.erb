@@ -1,0 +1,14 @@
+<h1>編集画面</h1>
+  <%= form_with model: @post do |f| %>
+    <h4>画像</h4>
+      <%= f.file_field :image, accept: "image/*" %>
+    <h4>国名</h4>
+      <%= f.text_field :country %>
+    <h4>都市</h4>
+      <%= f.text_field :city %>
+    <h4>ジャンル</h4>
+      <%= f.select :genre, ['娯楽', '観光', '宿泊', '食事', 'その他'], {include_blank: '---'} %>
+    <h4>説明</h4>
+    <%= f.text_area :explain %>
+    <%= f.submit '編集' %>
+  <% end %>

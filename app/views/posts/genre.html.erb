@@ -1,0 +1,14 @@
+<h4><%= @post.genre %>一覧</h4>
+
+<% @posts.each do |posts| %>
+<div>
+  <%= link_to post_path(posts.id) do %>
+    <%= image_tag posts.get_image %>
+  <% end %>
+  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+  <p>国名：<%= posts.country %></p>
+  <p>都市：<%= posts.city %></p>
+  <p>ジャンル：<%= posts.genre %></p>
+  <p>ユーザーネーム：<%= posts.user.name %></p>
+</div>
+<% end %>
