@@ -1,12 +1,48 @@
 <%# binding.pry %>
-<% @posts.each do |posts| %>
-<div>
-  <%= link_to post_path(posts.id) do %>
-    <%= image_tag posts.get_image %>
-  <% end %>
-  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
-  <p>国名：<%= posts.country %></p>
-  <p>都市：<%= posts.city %></p>
-  <p>ユーザーネーム：<%= posts.user.name %></p>
+<div class="container" style = "margin-top: 56px;">
+  <div class="row">
+    <div class="col-lg-2" style="background-color: #EEEEEE;">
+      <div class="sidebar" style="margin-top: 200px;">
+        <%= search_form_for @q do |f| %>
+          <%= f.label :ジャンル %>
+        　<br><%= f.radio_button :genre_eq, '', {:checked => true} %>指定なし
+          <br><%= f.radio_button :genre_eq, "娯楽" %>娯楽
+          <br><%= f.radio_button :genre_eq, "観光" %>観光
+          <br><%= f.radio_button :genre_eq, "宿泊" %>宿泊
+          <br><%= f.radio_button :genre_eq, "食事" %>食事
+          <br><%= f.radio_button :genre_eq, "その他" %>その他
+          <!--ここまで追加-->
+          <%= f.submit "検索" %>
+        <% end %>
+        <div class= "mypage" style = "margin-top: 60px;" >
+         <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg  btn btn-outline-success" %></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-10">
+      <div class="text-center">
+        <% if params[:q].present? %>
+          <h2><%= params[:q]["genre_eq"] %>一覧</h2>
+        <% else %>
+          <h2>投稿一覧</h2>
+        <% end %>
+      </div>
+      <div class="row">
+        <% @posts.each do |posts| %>
+          <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 16px;">
+            <%= link_to post_path(posts.id) do %>
+              <%= image_tag posts.get_image(300,300),class:"card-img-top", style:"max-height: 180px;"%>
+            <% end %>
+            <div class="card-body">
+              <p>国名：<%= posts.country %></p>
+              <p>都市：<%= posts.city %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <h4>
+      <%= paginate @posts %>
+      </h4>
+    </div>
+  </div>
 </div>
-<% end %>

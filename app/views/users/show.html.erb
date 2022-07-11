@@ -1,20 +1,46 @@
-<div>
-  <h3><%= @user.name %></h3>
+<div class="container" style = "margin-top: 56px;">
+<div class="row">
+<div class="col-lg-5">
+  <div class = "title" style = "margin-top: 50px;">
+  <h1>マイページ</h1>
+  </div>
+  <div class= "mypage" style = "margin-top: 100px;" >
+    <h3>
+  <p>プロフィール画像：<%= image_tag @user.get_profile_image(180,180),class:"mt-3 rounded-circle" %></p>
+  <p>ニックネーム：<%= @user.name %></p>
+  <div class= "mypage" style = "margin-top: 70px;" >
   <p>メールアドレス：<%= @user.email %></p>
-  <%= image_tag @user.get_profile_image(100,100) %>
+  </div>
   <% if @user == current_user %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-lg  btn btn-outline-primary mt-5" %></p>
+    </h3>
   <% end %>
+  </div>
 </div>
 
-<% @post.each do |posts| %>
-<div>
-  <%= link_to post_path(posts.id) do %>
-    <%= image_tag posts.get_image %>
-  <% end %>
-  <p>投稿ユーザー画像：<%= image_tag posts.user.get_profile_image(100,100) %></p>
-  <p>ショップ名：<%= posts.country %></p>
-  <p>説明：<%= posts.city %></p>
-  <p>ユーザーネーム：<%= posts.user.name %></p>
+<div class="col-lg-3">
+  <div class= "mypage" style = "margin-top: 600px;" >
+   <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg  btn btn-outline-success" %></h2>
+  </div>
+</div>
+<div class="col-lg-3">
+<% @posts.each do |posts| %>
+<div class= "mypage" style = "margin-top: 15px;" >
+  <div class="card shadow-lg" style="width: 330px;">
+    <%= link_to post_path(posts.id) do %>
+      <%= image_tag posts.get_image(330,330), class:"card-img-top", style:"max-height: 220px;" %>
+    <% end %>
+    <div class="card-body">
+      <p>国名：<%= posts.country %></p>
+
+      <p>都市名：<%= posts.city %></p>
+    </div>
+  </div>
 </div>
 <% end %>
+<h4>
+<%= paginate @posts %>
+</h4>
+</div>
+</div>
+</div>

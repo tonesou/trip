@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page]).per(6)
   end
 
   def show
@@ -41,8 +42,8 @@ class PostsController < ApplicationController
 
   def genre
     @post = Post.find(params[:id])
-    #@genre = Genre.where(id: params[:id])
     @posts = Post.all
+    @posts = Post.where(genre: params[:genre])
   end
 
   private
