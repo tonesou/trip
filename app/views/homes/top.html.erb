@@ -1,9 +1,15 @@
 <div class="container" style = "margin-top: 200px;">
-    <div class= "bg-info text-white">
+  <div class ="row">
+    <div class="col-12">
+      <%= image_tag ('07cb6ee4db4c2ebd5ad694cce2a3751e_t.jpeg'), class:'icon' %>
+    <div class= "text-dark">
       　<h1 class="text-center">RealTripへようこそ！</h1>
 
         　<h3 class = "text-center">
         　 <%= link_to "早速見に行く", posts_path %>
         　</h3>
     </div>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
+  </div>
+  </div>
 </div>
