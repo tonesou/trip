@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://kit.fontawesome.com/99e9507590.js" crossorigin="anonymous"></script>
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,11 +14,12 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-light bg-info fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
     <!-- タイトル -->
-    <a class="navbar-brand p-2 text-white" href="/">RealTrip<%#= image_tag ('linkedin_banner_image_2.png'), class:'icon' %></a>
-
+    <a class="navbar-brand p-2 text-white" href="/">RealTrip<i class="fa-solid fa-plane-departure"></i><%#= image_tag ('linkedin_banner_image_2.png'), class:'icon' %></a>
+    
     <!-- ナビゲーションメニュー -->
+    
     <div class= "text-white">
     <%= search_form_for @search, url: posts_path do |f| %>
       <%= f.label :country_or_city_or_genre_explain_cont, "キーワード検索" %>
