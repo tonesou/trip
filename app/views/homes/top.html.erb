@@ -5,6 +5,9 @@
     <%= link_to "早速見に行く", posts_path %>
   </h3></div>
   <div class="col-6 col-md-3 mx-auto">
-    <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block", method: :post %>
+    <!--ログイン時はゲストログインボタン非表示-->
+    <% unless user_signed_in? %>
+      <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block", method: :post %>
+    <% end %>
   </div>
 </div>

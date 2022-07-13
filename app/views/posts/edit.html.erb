@@ -13,7 +13,7 @@
         <h4>ジャンル</h4>
           <%= f.select :genre, ['娯楽', '観光', '宿泊', '食事', 'その他'], {include_blank: '---'} %>
         <h4>説明</h4>
-          <%= f.text_area :explain %>
+          <%= f.text_area :explain, size: "50x4" %>
           <%= f.submit '編集', class: "btn btn-lg  btn btn-outline-success mt-5" %>
         <% end %>
       </div>

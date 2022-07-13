@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  
+  devise_for :users,skip: [:passwords], controllers: {
+  registrations: "devise/registrations",
+  sessions: 'devise/sessions'
+  }
+  
+  devise_for :admin,skip: [:registrations, :passwords], controllers: {
+  sessions: "admin/sessions"
+  }
 
-  devise_for :users
   resources :posts, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
