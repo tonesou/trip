@@ -20,52 +20,53 @@
         <a class="navbar-brand p-2 text-white" href="/">RealTrip<i class="fa-solid fa-plane-departure"></i><%#= image_tag ('linkedin_banner_image_2.png'), class:'icon' %></a>
 
         <!-- ナビゲーションメニュー -->
-        <div class="ml-auto">
-          <div class="float-left">
-            <div class= "text-white">
+
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+              <li class= "text-white nav-item">
               <%= search_form_for @search, url: posts_path do |f| %>
                 <%= f.label :country_or_city_or_genre_explain_cont, "キーワード検索" %>
                 <%= f.search_field :country_or_city_or_genre_or_explain_cont %>
-                <%= f.submit "検索" %>
+                <%= f.submit "検索" %>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
               <% end %>
-            </div>
+                </li>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','house-user', 'マイページ'), user_path(current_user.id), class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','images', '投稿一覧'), posts_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','camera', '投稿フォーム'), new_post_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','plane-arrival', 'ログアウト'), destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','briefcase', '新規登録'), new_user_registration_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to icon('fas','sign-in-alt', 'ログイン'), new_user_session_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','address-card', 'About'), homes_about_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to  icon('fas','images', '投稿一覧'), posts_path, class: 'nav-link text-white' %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="ml-auto">
+          <div class="float-left">
 
             <!-- ハンバーガーメニュー -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          </div>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <% if user_signed_in? %>
-                <li class="nav-item">
-                  <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "投稿一覧", posts_path, class: 'nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to '投稿フォーム', new_post_path, class: 'nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-                </li>
-              <% else %>
-                <li class="nav-item">
-                  <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "About", homes_about_path, class: 'nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "投稿一覧", posts_path, class: 'nav-link text-white' %>
-                </li>
-              <% end %>
-            </ul>
           </div>
         </div>
       </nav>

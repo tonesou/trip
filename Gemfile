@@ -64,6 +64,7 @@ gem 'devise'
 gem 'kaminari','~> 1.2.1'
 gem 'ransack'
 gem 'jquery-rails'
+gem 'font-awesome-sass'
 
 gem 'dotenv-rails'
 group :production do
