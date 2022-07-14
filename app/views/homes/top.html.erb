@@ -6,8 +6,12 @@
   </h3></div>
   <div class="col-6 col-md-3 mx-auto">
     <!--ログイン時はゲストログインボタン非表示-->
-    <% unless user_signed_in? %>
+    <p><% unless user_signed_in? %>
       <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block", method: :post %>
-    <% end %>
+    <% end %></p>
+    <% if flash[:notice] %>
+ <div class="alert alert-success" role="alert">
+ <p class="notice text-center" style="color:green;"><%= flash[:notice] %></p></div>
+<% end %>
   </div>
 </div>
