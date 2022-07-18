@@ -1,4 +1,6 @@
 class Admins::UsersController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @users = User.all
   end
@@ -6,7 +8,7 @@ class Admins::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  
+
   def hide
 		@user = User.find(params[:id])
 		#is_deletedカラムにフラグを立てる(defaultはfalse)
@@ -15,7 +17,7 @@ class Admins::UsersController < ApplicationController
     	reset_session
     	flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
     	redirect_to root_path
-	end
+  end
 
   def edit
   end

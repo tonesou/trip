@@ -4,7 +4,7 @@
     <div class="col-lg-2" style="background-color: #EEEEEE;">
       <div class="sidebar" style="margin-top: 200px;">
         <%= search_form_for @q do |f| %>
-          <%= f.label :ジャンル %>
+          <strong><%= f.label :ジャンル %></strong>
         　<br><%= f.radio_button :genre_eq, '', {:checked => true} %>指定なし
           <br><%= f.radio_button :genre_eq, "娯楽" %>娯楽
           <br><%= f.radio_button :genre_eq, "観光" %>観光
@@ -12,7 +12,7 @@
           <br><%= f.radio_button :genre_eq, "食事" %>食事
           <br><%= f.radio_button :genre_eq, "その他" %>その他
           <!--ここまで追加-->
-          <%= f.submit "検索" %>
+          <%= f.submit "検索", class: "btn btn btn-outline-success" %>
         <% end %>
         <div class= "mypage" style = "margin-top: 150px;" >
          <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg  btn btn-outline-success" %></h2>

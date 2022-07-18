@@ -4,21 +4,21 @@
     <div class="col-lg-8">
       <h3 class = "mb-5 text-center">会員一覧</h3>
       <table class="table">
-        <thaed>
+        <thead>
           <tr>
             <th>会員ID</th>
             <th>作成日時</th>
             <th>氏名</th>
             <th>ステータス</th>
           </tr>
-        </thred>
+        </thead>
         <tbody>
           <% @users.each do |user| %>
             <tr>
-              <th><%= user.id %></th>
-              <th><%= user.created_at.strftime('%Y/%m/%d') %></th>
-              <th><%=link_to user.name, admins_user_path(user.id) %></th>
-              <th><%= user.is_deleted ? "退会" : "有効" %></th>
+              <td><%= user.id %></td>
+              <td><%= user.created_at.strftime('%Y/%m/%d') %></td>
+              <td><%=link_to user.name, admins_user_path(user.id) %></td>
+              <td><%= user.is_deleted ? "退会" : "有効" %></td>
             </tr>
           <% end %>
         </tbody>

@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   sessions: 'devise/sessions'
   }
 
-  devise_for :admin,skip: [:passwords], controllers: {
-  registrations: "admin/registrations",
+  devise_for :admin,skip: [:registrations, :password], controllers: {
   sessions: "admin/sessions"
   }
 
@@ -27,6 +26,10 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :users,only: [:index,:show,:edit,:update]
     put "/users/:id/hide" => "users#hide", as: 'users_hide'
+  end
+
+  namespace :admins do
+   resources :post_comments,only: [:index,:show,:destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

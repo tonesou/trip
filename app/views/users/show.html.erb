@@ -9,7 +9,9 @@
             <p>プロフィール画像：<%= image_tag @user.get_profile_image(180,180),class:"mt-3 rounded-circle" %></p>
             <p>ニックネーム：<%= @user.name %></p>
             <div class= "mypage" style = "margin-top: 70px;" >
+              <% if @user == current_user %>
               <p>メールアドレス：<%= @user.email %></p>
+              <% end %>
             </div>
             <% if @user.name != "guestuser" %>
             <% if @user == current_user %>
@@ -25,7 +27,7 @@
 
     <div class="col-lg-3">
       <% flash.each do |message_type, message| %>
-　　    <div class="alert alert-<%= message_type %>"><%= message %></div>
+　　    <div class="alert alert-success"><%= message %></div>
       <% end %>
       <div class= "mypage" style = "margin-top: 600px;" >
         <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg btn-success rounded-pill" %></h2>

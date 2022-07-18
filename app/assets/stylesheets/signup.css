@@ -1,58 +1,15 @@
-@import '~bootstrap/scss/bootstrap';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-
-
-body {
-  padding-top: 62px;
-}
-
-.hero {
-  height: calc(100vh - 62px);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url("../images/airplane_-civil_aviation_aircraft_Desktop_Wallpapers_1366x768.jpg");
-}
-
-.icon{
-  width: 50px;
-  height: 50px;
-}
-
-.pagination>li>a {
-  border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
-}
-
-.heros {
-  height: calc(100vh - 500px);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url("../images/linkedin_banner_image_2.png");
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-}
-
-.box1 {
-  width: 350px;
-  height: 600px;
-  margin: 60px auto 0;
-  border-radius: 4px;
-  border: 1px #ddd solid;
-}
-
-.box2 {
+/** {*/
+/*  margin: 0px;*/
+/*  padding: 0px;*/
+/*  text-decoration: none;*/
+/*  }*/
+.box {
   width: 350px;
   height: 450px;
   margin: 60px auto 0;
   border-radius: 4px;
-  border: 1px #ddd solid;
-}
+  /*border: 1px #ddd solid;*/
+  }
 
 .box-inner {
   padding: 20px 26px;
@@ -67,10 +24,6 @@ h1 {
   color: #111111;
 }
 
-.box-name {
-  margin-bottom: 13px;
-}
-
 .box-email {
   margin-bottom: 13px;
 }
@@ -79,14 +32,14 @@ h1 {
   margin-bottom: 22px;
 }
 
-.box-name label, .box-email label, .box-password label {
+.box-email label, .box-password label {
   font-weight: 700;
   font-size: 13px;
   padding-left: 2px;
   padding-bottom: 2px;
 }
 
-.box-name input[type="text"], .box-email input[type="email"], .box-password input[type="password"] {
+.box-email input[type="email"], .box-password input[type="password"] {
   border-style: none;
   box-sizing: border-box;
   width: 100%;
@@ -119,12 +72,17 @@ h1 {
   height: 31px;
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
   border-radius: 3px;
-  border: 1px #a88734 solid;
+  /*border: 1px #a88734 solid;*/
 }
 
 .box-login input[type="submit"]:hover {
   cursor: pointer;
   background: #f0c14b;
+}
+
+.legal-text {
+  margin-top: 18px;
+  font-size: 12px;
 }
 
 .remember {
@@ -155,7 +113,7 @@ h1 {
   text-align: center;
   background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
   border-radius: 3px;
-  border: 1px #a2a6ac solid;
+  /*border: 1px #a2a6ac solid;*/
 }
 
 .box-newusr a:hover {

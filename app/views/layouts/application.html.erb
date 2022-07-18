@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>RealTrip</title>
+     <link rel="stylesheet" href="signup.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="https://kit.fontawesome.com/99e9507590.js" crossorigin="anonymous"></script>
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -24,7 +25,20 @@
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-              <% if user_signed_in? %>
+              <% if admin_signed_in? %>
+              <li class="nav-item">
+                <%= link_to  icon('fas','plane-departure', 'Top'), root_path, class: 'nav-link text-white' %>
+              </li>
+              <li class="nav-item">
+                  <%= link_to  icon('fas','user-check', '会員一覧'), admins_users_path, class: 'nav-link text-white' %>
+              </li>
+              <li class="nav-item">
+                  <%= link_to  icon('fas','comment', 'コメント一覧'), admins_post_comments_path, class: 'nav-link text-white' %>
+              </li>
+              <li class="nav-item">
+                  <%= link_to  icon('fas','plane-arrival', 'ログアウト'), destroy_admin_session_path, method: :delete, class: 'nav-link text-white' %>
+              </li>
+              <% elsif user_signed_in? %>
               <li class= "text-white nav-item">
               <%= search_form_for @search, url: posts_path do |f| %>
                 <%= f.label :country_or_city_or_genre_explain_cont, "キーワード検索" %>
@@ -52,10 +66,10 @@
                   <%= link_to icon('fas','sign-in-alt', 'ログイン'), new_user_session_path, class: 'nav-link text-white' %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to  icon('fas','address-card', 'About'), homes_about_path, class: 'nav-link text-white' %>
+                  <%= link_to  icon('fas','plane-departure', 'Top'), root_path, class: 'nav-link text-white' %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to  icon('fas','images', '投稿一覧'), posts_path, class: 'nav-link text-white' %>
+                  <%= link_to  icon('fas','address-card', 'About'), homes_about_path, class: 'nav-link text-white' %>
                 </li>
               <% end %>
             </ul>

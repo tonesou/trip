@@ -10,7 +10,7 @@
             <td><%= @user.id %></td>
           </tr>
           <tr>
-            <td>退会ステータス</td>
+            <td>会員ステータス</td>
             <td><%= @user.is_deleted ? "退会" : "有効" %></td>
           </tr>
           <tr>
@@ -25,13 +25,11 @@
             <td>メールアドレス</td>
             <td><%= @user.email %></td>
           </tr>
-          <!--<tr>-->
-          <!--  <td>会員ステータス</td>-->
-          <!--  <td><%#= @user.is_deleted ? "退会" : "有効" %></td>-->
-          <!--</tr>-->
         </tbody>
       </table>
-    </div>
+      
+      
+      
     <div class="col-lg-2"></div>
   </div>
 </div>

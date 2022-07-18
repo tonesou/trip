@@ -1,14 +1,14 @@
 <div class="hero d-flex flex-column">
-  <div class ="top" style="margin-top: 80px;">
+  <div class ="top" style="margin-top: 100px;">
   <h2 class="text-center text-light" style="font-size: 5vw;">RealTripへようこそ！</h2>
-  <h3 class="text-center" style="font-size: 2vw;">
-    <%= link_to "早速見に行く", posts_path %>
-  </h3></div>
+  </div>
   <div class="col-6 col-md-3 mx-auto">
+    <p></p>
     <!--ログイン時はゲストログインボタン非表示-->
-    <p><% unless user_signed_in? %>
-      <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block", method: :post %>
-    <% end %></p>
+    <% unless user_signed_in? %>
+      <p><%= link_to 'ログイン', new_user_session_path, class: "btn btn-success btn-sm btn-block", method: :post %></p>
+      <p><%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block", method: :post %></p>
+    <% end %>
     <% if flash[:notice] %>
  <div class="alert alert-success" role="alert">
  <p class="notice text-center" style="color:green;"><%= flash[:notice] %></p></div>
