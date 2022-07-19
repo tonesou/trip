@@ -14,8 +14,8 @@
             <td><%= @post_comment.id %></td>
           </tr>
           <tr>
-            <td>コメント</td>
-          <td><%= @post_comment.comment %></td>
+            <td>ポストID</td>
+            <td><%= @post_comment.post.id %></td>
           </tr>
           <tr>
             <td>ユーザーID</td>
@@ -24,6 +24,10 @@
           <tr>
             <td>ユーザー名</td>
             <td><%= @post_comment.user.name %></td>
+          </tr>
+          <tr>
+            <td>コメント</td>
+          <td><%= @post_comment.comment %></td>
           </tr>
         </tbody>
       </table>

@@ -31,12 +31,12 @@
     <h3 class = "mb-5 text-center">コメント履歴</h3>
     <table class="table table-hover teble-inverse mb-5">
       <tbody>
-      <tr>
-          <% @post_comments.each do |post_comment| %>
-          <td><%= post_comment.created_at.strftime('%Y/%m/%d') %></td>
-          <td><%= link_to post_comment.comment, admins_post_comment_path(post_comment.id) %></td>
+        <% @post_comments.each do |post_comment| %>
+          <tr>
+            <td><%= post_comment.created_at.strftime('%Y/%m/%d') %></td>
+            <td><%= link_to post_comment.comment, admins_post_comment_path(post_comment.id) %></td>
+          </tr>
         <% end %>
-      </tr>
       </tbody>
     </table>
   </div>

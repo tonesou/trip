@@ -5,6 +5,7 @@ class Admins::PostCommentsController < ApplicationController
 
   def show
     @post_comment = PostComment.find(params[:id])
+    @posts = @post_comment.post
   end
   
   def sho
