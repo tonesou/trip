@@ -11,7 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url("../images/airplane_-civil_aviation_aircraft_Desktop_Wallpapers_1366x768.jpg");
+  background-image: url("../images/24033383_l.jpg");
 }
 
 .icon{
@@ -160,4 +160,21 @@ h1 {
 
 .box-newusr a:hover {
   background: #e7e9ec;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+.pagination {
+  justify-content: center;
 }

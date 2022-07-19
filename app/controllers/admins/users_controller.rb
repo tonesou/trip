@@ -7,6 +7,7 @@ class Admins::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @post_comments = PostComment.all
   end
 
   def hide
