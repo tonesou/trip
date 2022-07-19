@@ -28,6 +28,7 @@
             <% if @user == current_user %>
             <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-lg  btn btn-outline-primary mt-5" %>&emsp;
             <% if user_signed_in? && @user.id == current_user.id %>
+            <%= link_to "ブックマーク", favorites_user_path(@user), class: "btn btn-lg  btn btn-outline-primary mt-5" %>
               <%= link_to "退会", admins_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-lg  btn btn-outline-danger mt-5" %></p>
             <% end %>
           </h3>
@@ -40,13 +41,13 @@
       <% flash.each do |message_type, message| %>
 　　    <div class="alert alert-success"><%= message %></div>
       <% end %>
-      <div class= "mypage" style = "margin-top: 600px;" >
+      <div class= "mypage" style = "margin-top: 550px;" >
         <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg btn-success rounded-pill" %></h2>
       </div>
     </div>
     <div class="col-lg-3">
       <% @posts.each do |posts| %>
-        <div class= "mypage" style = "margin-top: 15px;" >
+        <div class= "mypage" style = "margin-top: 10px;" >
           <div class="card shadow-lg" style="width: 330px;">
             <%= link_to post_path(posts.id) do %>
               <%= image_tag posts.get_image(330,330), class:"card-img-top", style:"max-height: 220px;" %>

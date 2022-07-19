@@ -10,12 +10,17 @@ Rails.application.routes.draw do
   }
 
   resources :posts, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
-    resource :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy, :show]
     resources :post_comments, only: [:create, :destroy]
     # get "posts/genre" => "posts#genre"
     get "posts/genres/:id" => "posts#genre", as: :genre_show
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update]do
+    member do
+      get :favorites
+    end
+  end
+  
   get 'homes/top'
   root to: "homes#top"
   get "homes/about" => "homes#about"

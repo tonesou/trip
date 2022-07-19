@@ -4,6 +4,15 @@
       <div class="col-lg-9">
 
         <h2>プロフィール編集</h2><br>
+        <% if @user.errors.any? %>
+          <div>
+            <ul style="color: red">
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <%= form_with model: @user do |f| %>
           <h4>
             <div class= "edit" style = "margin-top: 25px;" >

@@ -1,0 +1,17 @@
+<div class="container" style="margin-left: 230px;">
+  <div class="row">
+      <% @favorite_posts.each do |posts|%>
+        <div class= "mypage">
+          <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 10px;">
+            <%= link_to post_path(posts.id) do %>
+              <%= image_tag posts.get_image(330,330), class:"card-img-top", style:"max-height: 220px;" %>
+            <% end %>
+            <div class="card-body">
+              <p>国名：<%= posts.country %></p>
+              <p>都市名：<%= posts.city %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
