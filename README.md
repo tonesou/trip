@@ -14,7 +14,7 @@
 自分の体験などを共有したいときに投稿したり、旅行先に迷っているときに興味のある場所を探すことができる。また、旅行先でやることを探したい時にも過去のその場所の投稿から調べることができる
 
 ## 設計書
-<...>
+https://app.diagrams.net/#G1VHqvEmXjHkk0eymYHCBfCTKDf1qAo02m
 
 ## 開発環境
 - OS：Linux(CentOS)
