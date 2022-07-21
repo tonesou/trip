@@ -2,12 +2,12 @@ class Admins::UsersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @users = User.all
+    @users = User.all.page(params[:page]).per(10)
   end
 
   def show
     @user = User.find(params[:id])
-    @post_comments = @user.post_comments
+    @post_comments = @user.post_comments.page(params[:page]).per(5)
   end
 
   def hide

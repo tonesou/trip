@@ -1,8 +1,19 @@
 <div class="container" style = "margin-top: 1px;">
   <div class="row">
     <div class="col-lg-8">
-      <div class="card mt-3 shadow-lg" style="width: 650px;">
-        <%= image_tag @post.get_image(650,650), class:"card-img-top", style:"max-height: 431px;" %>
+
+
+      <div class="card mt-1 shadow-lg" style="width: 650px; height: 740px;">
+        <%#= image_tag @post.get_image(650,650), class:"card-img-top", style:"max-height: 431px;" %>
+        <div id="tall">
+            <div id="theTarget">
+              <% @post.images.each_with_index do |image, index| %>
+                <div class="image<%= index + 1 %>">
+                  <%= image_tag(image, width:648, height:530) %>
+                 </div>
+              <% end %>
+            </div>
+          </div>
         <div class="card-body">
           <div class="row">
             <div class="col-3">
@@ -56,4 +67,5 @@
           <%= f.text_area :comment, size: "40x3", placeholder: "コメントをここに" %>
           <%= f.submit "送信する", class: "btn btn-success" %>
         <% end %>
+        <%#= paginate @post_comment %>
     </div>

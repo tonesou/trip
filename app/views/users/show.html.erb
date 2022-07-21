@@ -50,7 +50,9 @@
         <div class= "mypage" style = "margin-top: 10px;" >
           <div class="card shadow-lg" style="width: 330px;">
             <%= link_to post_path(posts.id) do %>
-              <%= image_tag posts.get_image(330,330), class:"card-img-top", style:"max-height: 220px;" %>
+              <% unless posts.images.first.nil? %>
+                <%= image_tag(posts.images.first, width:328, height:200)%>
+              <% end %>
             <% end %>
             <div class="card-body">
               <p>国名：<%= posts.country %></p>

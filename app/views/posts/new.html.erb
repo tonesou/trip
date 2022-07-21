@@ -14,7 +14,7 @@
         <% end %>
           <%= form_with model: @post do |f| %>
             <h4>画像</h4>
-              <%= f.file_field :image, accept: "image/*" %>
+              <%= f.file_field :images, multiple: true %>
             <h4>国名</h4>
               <%= f.text_field :country %>
             <h4>都市</h4>

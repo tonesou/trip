@@ -4,7 +4,7 @@
     <div class="col-lg-2" style="background-color: #EEEEEE;">
       <div class="sidebar" style="margin-top: 200px;">
         <%= search_form_for @q do |f| %>
-          <strong><%= f.label :ジャンル %></strong>
+          <%= f.label :ジャンル %>
         　<br><%= f.radio_button :genre_eq, '', {:checked => true} %>指定なし
           <br><%= f.radio_button :genre_eq, "娯楽" %>娯楽
           <br><%= f.radio_button :genre_eq, "観光" %>観光
@@ -12,7 +12,7 @@
           <br><%= f.radio_button :genre_eq, "食事" %>食事
           <br><%= f.radio_button :genre_eq, "その他" %>その他
           <!--ここまで追加-->
-          <%= f.submit "検索", class: "btn btn btn-outline-success" %>
+          <%= f.submit "検索", class: "btn btn-lg  btn btn-outline-success" %>
         <% end %>
         <div class= "mypage" style = "margin-top: 150px;" >
          <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg  btn btn-outline-success" %></h2>
@@ -31,7 +31,9 @@
         <% @posts.each do |posts| %>
           <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 16px;">
             <%= link_to post_path(posts.id) do %>
-              <%= image_tag posts.get_image(300,300),class:"card-img-top", style:"max-height: 180px;"%>
+              <% unless posts.images.first.nil? %>
+                <%= image_tag(posts.images.first, width:300, height:200)%>
+              <% end %>
             <% end %>
             <div class="card-body">
               <p>国名：<%= posts.country %></p>

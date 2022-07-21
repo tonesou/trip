@@ -4,7 +4,9 @@
         <div class= "mypage">
           <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 10px;">
             <%= link_to post_path(posts.id) do %>
-              <%= image_tag posts.get_image(330,330), class:"card-img-top", style:"max-height: 220px;" %>
+              <% unless posts.images.first.nil? %>
+                <%= image_tag(posts.images.first, width:300, height:200)%>
+              <% end %>
             <% end %>
             <div class="card-body">
               <p>国名：<%= posts.country %></p>
@@ -13,5 +15,6 @@
           </div>
         </div>
       <% end %>
+      <%#= paginate @favorites %>
   </div>
 </div>
