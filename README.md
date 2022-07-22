@@ -16,7 +16,10 @@
 ## 設計書
 ER図、ワイヤーフレーム、画面移行図
 https://app.diagrams.net/#G1VHqvEmXjHkk0eymYHCBfCTKDf1qAo02m
-
+アプリケーション設計書
+https://docs.google.com/spreadsheets/d/1kxHyBxkEAmiqYGDpN7H8ITQknhChShOIHjgIYF09k4s/edit#gid=2133469642
+テーブル設計書
+https://docs.google.com/spreadsheets/d/1PTg-dWKTIUNBHOo_LLPDxUi12bJ_pO8ZL_CCc3viNZQ/edit#gid=1267421999
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
