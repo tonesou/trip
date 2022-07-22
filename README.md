@@ -14,11 +14,11 @@
 自分の体験などを共有したいときに投稿したり、旅行先に迷っているときに興味のある場所を探すことができる。また、旅行先でやることを探したい時にも過去のその場所の投稿から調べることができる
 
 ## 設計書
-ER図、ワイヤーフレーム、画面移行図
-https://app.diagrams.net/#G1VHqvEmXjHkk0eymYHCBfCTKDf1qAo02m
-アプリケーション設計書
-https://docs.google.com/spreadsheets/d/1kxHyBxkEAmiqYGDpN7H8ITQknhChShOIHjgIYF09k4s/edit#gid=2133469642
-テーブル設計書
+ER図、ワイヤーフレーム、画面移行図<br>
+https://app.diagrams.net/#G1VHqvEmXjHkk0eymYHCBfCTKDf1qAo02m<br>
+アプリケーション設計書<br>
+https://docs.google.com/spreadsheets/d/1kxHyBxkEAmiqYGDpN7H8ITQknhChShOIHjgIYF09k4s/edit#gid=2133469642<br>
+テーブル設計書<br>
 https://docs.google.com/spreadsheets/d/1PTg-dWKTIUNBHOo_LLPDxUi12bJ_pO8ZL_CCc3viNZQ/edit#gid=1267421999
 ## 開発環境
 - OS：Linux(CentOS)
