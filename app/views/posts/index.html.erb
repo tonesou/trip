@@ -1,5 +1,5 @@
 <%# binding.pry %>
-<div class="container" style = "margin-top: 30px;">
+<div class="container" style = "margin-top: 10px;">
   <div class="row">
     <div class="col-lg-2" style="background-color: #EEEEEE;">
       <div class="sidebar" style="margin-top: 200px;">
@@ -29,7 +29,7 @@
       </div>
       <div class="row">
         <% @posts.each do |posts| %>
-          <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 16px;">
+          <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 5px;">
             <%= link_to post_path(posts.id) do %>
               <% unless posts.images.first.nil? %>
                 <%= image_tag(posts.images.first, width:300, height:200)%>

@@ -7,6 +7,16 @@ class UsersController < ApplicationController
     @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(2)
   end
 
+  def hide
+		@user = User.find(params[:id])
+		#is_deletedカラムにフラグを立てる(defaultはfalse)
+    	@user.update(is_deleted: true)
+    	#ログアウトさせる
+    	reset_session
+    	flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    	redirect_to root_path
+  end
+
   def edit
     @user = User.find(params[:id])
   end
@@ -23,7 +33,7 @@ class UsersController < ApplicationController
   def favorites
     @user = User.find(params[:id])
     favorites= Favorite.where(user_id: @user.id).pluck(:post_id)
-    @favorite_posts = Post.find(favorites)
+    @favorite_posts = Post.where(id: favorites).page(params[:page]).per(6)
   end
 
 

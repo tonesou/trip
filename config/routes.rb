@@ -16,11 +16,12 @@ Rails.application.routes.draw do
     get "posts/genres/:id" => "posts#genre", as: :genre_show
   end
   resources :users, only: [:show, :edit, :update]do
+    put "/users/:id/hide" => "users#hide", as: 'users_hide'
     member do
       get :favorites
     end
   end
-  
+
   get 'homes/top'
   root to: "homes#top"
   get "homes/about" => "homes#about"

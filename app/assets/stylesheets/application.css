@@ -15,11 +15,11 @@
  */
 
 #tall {
-  height: 530px;
+  height: 460px;
 }
 .image1 {
   background-image: url(sunday.jpg);
-  height: 800px;
+  /*height: 800px;*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;

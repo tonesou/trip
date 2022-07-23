@@ -4,13 +4,20 @@
       <div class="card mt-1 shadow-lg" style="width: 650px; height: 740px;">
         <%#= image_tag @post.get_image(650,650), class:"card-img-top", style:"max-height: 431px;" %>
         <div id="tall">
+          <% if @post.images.length > 1 %>
             <div id="theTarget">
+              <!--画像が複数枚以上ならsipperを適用-->
               <% @post.images.each_with_index do |image, index| %>
                 <div class="image<%= index + 1 %>">
-                  <%= image_tag(image, width:648, height:530) %>
+                  <%= image_tag(image, width:648, height:460) %>
                  </div>
               <% end %>
             </div>
+          <% else %>
+           <div class="image1">
+            <%= image_tag(@post.images.first, width:648, height:460) %>
+           </div>
+          <% end %>
           </div>
         <div class="card-body">
           <div class="row">
@@ -36,8 +43,8 @@
               <% if @post.user == current_user %>
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 <%= link_to "編集", edit_post_path(@post), class: "btn  btn btn-outline-success" %>｜
-                <%= link_to "削除", post_path(@post), method: :delete, class: "btn  btn btn-outline-danger" %>
-              <% end %></p>
+                <%= link_to "削除", post_path(@post), method: :delete, class: "btn  btn btn-outline-danger" %></p>
+              <% end %>
             </div>
           </div>
         </div>
@@ -45,7 +52,7 @@
     </div>
     <div class="col-lg-4 postarea" style="margin-top: 30px; word-break: break-all;">
       <table class="table">
-        <% @post.post_comments.each do |post_comment| %>
+        <% @post_comments.each do |post_comment| %>
           <tr>
             <td><%= link_to user_path(post_comment.user.id) do %>
             <p><%= image_tag post_comment.user.get_profile_image(40,40), class:"mt-3 rounded-circle" %></p>
@@ -60,10 +67,12 @@
         <% end %>
         </tr>
         </table>
+        <h5>
+          <%= paginate @post_comments %>
+        </h5>
 
         <%= form_with model: [@post, @post_comment] do |f| %>
           <%= f.text_area :comment, size: "40x3", placeholder: "コメントをここに" %>
           <%= f.submit "送信する", class: "btn btn-success" %>
         <% end %>
-        <%#= paginate @post_comment %>
     </div>

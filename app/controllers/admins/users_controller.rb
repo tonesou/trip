@@ -1,5 +1,5 @@
 class Admins::UsersController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, except: :hide
 
   def index
     @users = User.all.page(params[:page]).per(10)
@@ -13,11 +13,11 @@ class Admins::UsersController < ApplicationController
   def hide
 		@user = User.find(params[:id])
 		#is_deletedカラムにフラグを立てる(defaultはfalse)
-    	@user.update(is_deleted: true)
-    	#ログアウトさせる
-    	reset_session
-    	flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
-    	redirect_to root_path
+  	@user.update(is_deleted: true)
+  	#ログアウトさせる
+  	reset_session
+  	flash[:notice] = "退会処理済み"
+  	redirect_to root_path
   end
 
   def edit

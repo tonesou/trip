@@ -29,7 +29,7 @@
             <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-lg  btn btn-outline-primary mt-5" %>&emsp;
             <% if user_signed_in? && @user.id == current_user.id %>
             <%= link_to "ブックマーク", favorites_user_path(@user), class: "btn btn-lg  btn btn-outline-primary mt-5" %>
-              <%= link_to "退会", admins_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-lg  btn btn-outline-danger mt-5" %></p>
+              <%= link_to "退会", user_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-lg  btn btn-outline-danger mt-5" %></p>
             <% end %>
           </h3>
             <% end %>
@@ -48,10 +48,10 @@
     <div class="col-lg-3">
       <% @posts.each do |posts| %>
         <div class= "mypage" style = "margin-top: 10px;" >
-          <div class="card shadow-lg" style="width: 330px;">
+          <div class="card shadow-lg" style="width: 340px;">
             <%= link_to post_path(posts.id) do %>
               <% unless posts.images.first.nil? %>
-                <%= image_tag(posts.images.first, width:328, height:200)%>
+                <%= image_tag(posts.images.first, width:338, height:220)%>
               <% end %>
             <% end %>
             <div class="card-body">

@@ -7,7 +7,7 @@
     <div class="imagee", style="margin-top: 250px;">
     <!--ログイン時はゲストログインボタン非表示-->
     <% unless user_signed_in? %>
-    <p><%= link_to '新規登録', new_user_session_path, class: "btn btn-success btn-sm btn-block", method: :post %></p>
+    <p><%= link_to '新規登録', new_user_registration_path, class: "btn btn-success btn-sm btn-block", method: :post %></p>
       <p><%= link_to 'ログイン', new_user_session_path, class: "btn btn-success btn-sm btn-block", method: :post %></p>
       <p><%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info btn-sm btn-block", method: :post %></p>
     <% end %>
