@@ -69,6 +69,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'bootstrap4-kaminari-views'
+gem 'devise-i18n'
 
 gem 'dotenv-rails'
 group :production do
