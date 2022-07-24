@@ -5,7 +5,7 @@
           <div class="card shadow-lg" style="width: 312px; margin-left: 16px; margin-top: 10px;">
             <%= link_to post_path(posts.id) do %>
               <% unless posts.images.first.nil? %>
-                <%= image_tag(posts.images.first, width:310, height:220)%>
+                <%= image_tag(posts.images.first, width:310, height:217)%>
               <% end %>
             <% end %>
             <div class="card-body">
@@ -16,7 +16,8 @@
         </div>
       <% end %>
   </div>
-  <h4 class="paa" style="margin-right: 150px;">
-    <%= paginate @favorite_posts %>
-  </h4>
+
+  <div class="paa" style="margin-right: 150px; margin-top: 5px;">
+    <%= paginate @favorite_posts, theme: 'twitter-bootstrap-4' %>
+  </div>
 </div>

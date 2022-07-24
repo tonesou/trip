@@ -32,7 +32,7 @@
           <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 5px;">
             <%= link_to post_path(posts.id) do %>
               <% unless posts.images.first.nil? %>
-                <%= image_tag(posts.images.first, width:300, height:200)%>
+                <%= image_tag(posts.images.first, width:298, height:194)%>
               <% end %>
             <% end %>
             <div class="card-body">
@@ -42,9 +42,9 @@
           </div>
         <% end %>
       </div>
-      <h4>
-      <%= paginate @posts %>
-      </h4>
+      <div class="nate" style="margin-top:5px;" >
+        <%= paginate @posts, theme: 'twitter-bootstrap-4'%>
+      </div>
     </div>
   </div>
 </div>

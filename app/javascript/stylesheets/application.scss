@@ -162,19 +162,28 @@ h1 {
   background: #e7e9ec;
 }
 
-.pagination>li>a {
-  border: none;
-  color: #696969;
-}
-
-.pagination>.active>a {
-  background: #93c9ff;
-  border-radius: 15px;
-}
-
-.pagination>li>a:hover {
-  border-radius: 15px;
-}
 .pagination {
   justify-content: center;
 }
+
+.like-btn {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: #808080;
+ }
+
+.unlike-btn {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: #e54747;
+ }
+
+ .fa-comment {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: #808080;
+ }
+
