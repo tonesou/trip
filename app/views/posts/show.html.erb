@@ -44,7 +44,7 @@
                 <% if @post.user == current_user %>
                   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                   <%= link_to "編集", edit_post_path(@post), class: "btn  btn btn-outline-success" %>｜
-                  <%= link_to "削除", post_path(@post), method: :delete, class: "btn  btn btn-outline-danger" %></p>
+                  <%= link_to "削除", post_path(@post), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn  btn btn-outline-danger" %></p>
                 <% end %>
             </div>
           </div>
