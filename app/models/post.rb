@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :images, presence: true
 
   has_one_attached :profile_image
+  # 複数枚投稿
   has_many_attached :images
   belongs_to :user
   has_many :post_comments, dependent: :destroy

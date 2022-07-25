@@ -4,26 +4,26 @@
       <h3 class = "mb-5 text-center">コメント一覧</h3>
       <table class="table">
         <div class="row">
-        <thaed>
-          <tr>
-            <th class="col-2">会員ID</th>
-            <th class="col-2">ユーザー</th>
-            <th class="col-2">コメント日時</th>
-            <th class="col-5">コメント</th>
-            <th class="col-1"></th>
-          </tr>
-        </thaed>
-        <tbody>
-          <% @post_comments.each do |post_comment| %>
+          <thaed>
             <tr>
-              <td><%= post_comment.user.id %></td>
-              <td><%= link_to post_comment.user.name, admins_user_path(post_comment.user.id) %></td>
-              <td><%= post_comment.created_at.strftime('%Y/%m/%d') %></td>
-              <td><%= link_to post_comment.comment, admins_post_comment_path(post_comment.id) %></td>
+              <th class="col-2">会員ID</th>
+              <th class="col-2">ユーザー</th>
+              <th class="col-2">コメント日時</th>
+              <th class="col-5">コメント</th>
+              <th class="col-1"></th>
             </tr>
-          <% end %>
-        </tbody>
-      </div>
+          </thaed>
+          <tbody>
+            <% @post_comments.each do |post_comment| %>
+              <tr>
+                <td><%= post_comment.user.id %></td>
+                <td><%= link_to post_comment.user.name, admins_user_path(post_comment.user.id) %></td>
+                <td><%= post_comment.created_at.strftime('%Y/%m/%d') %></td>
+                <td><%= link_to post_comment.comment, admins_post_comment_path(post_comment.id) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </div>
       </table>
       <%= paginate @post_comments, theme: 'twitter-bootstrap-4' %>
     </div>

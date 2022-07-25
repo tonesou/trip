@@ -11,8 +11,7 @@
           <br><%= f.radio_button :genre_eq, "宿泊" %>宿泊
           <br><%= f.radio_button :genre_eq, "食事" %>食事
           <br><%= f.radio_button :genre_eq, "その他" %>その他
-          <!--ここまで追加-->
-          <%= f.submit "検索", class: "btn btn-lg  btn btn-outline-success" %>
+        　<br><%= f.submit "検索", class: "btn btn-lg  btn btn-outline-success" %>
         <% end %>
         <div class= "mypage" style = "margin-top: 150px;" >
          <h2><%= link_to "NEW POST", new_post_path, class: "btn btn-lg  btn btn-outline-success" %></h2>
