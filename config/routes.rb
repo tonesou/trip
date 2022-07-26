@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     # get "posts/genre" => "posts#genre"
     get "posts/genres/:id" => "posts#genre", as: :genre_show
   end
-  resources :users, only: [:show, :edit, :update]do
+  resources :users, only: [:show, :edit, :update, :index] do
     put "/users/:id/hide" => "users#hide", as: 'users_hide'
     member do
       get :favorites
@@ -37,5 +37,7 @@ Rails.application.routes.draw do
   namespace :admins do
    resources :post_comments,only: [:index,:show,:destroy]
   end
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

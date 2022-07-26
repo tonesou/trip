@@ -30,9 +30,7 @@
         <% @posts.each do |posts| %>
           <div class="card shadow-lg" style="width: 300px; margin-left: 16px; margin-top: 5px;">
             <%= link_to post_path(posts.id) do %>
-              <% unless posts.images.first.nil? %>
                 <%= image_tag(posts.images.first, width:298, height:194)%>
-              <% end %>
             <% end %>
             <div class="card-body">
               <p>国名：<%= posts.country %></p>
